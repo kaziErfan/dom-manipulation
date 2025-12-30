@@ -20,4 +20,9 @@ h1.style.backgroundColor = "Yellow";
 h1.style.textAlign = "center";
 h1.style.padding = "30px";
 
+//print all <li> using for loop
 
+let lis = document.querySelectorAll("li");
+lis.forEach(function(val){
+    console.log(val.textContent);
+});
