@@ -33,3 +33,7 @@ for(let i = 0; i < lis.length; i++){
     console.log(lis[i].textContent);
 };
 
+
+// Remove disable attribute from Update button
+let button = document.querySelector("button");
+button.removeAttribute("disabled");
