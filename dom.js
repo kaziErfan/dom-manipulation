@@ -57,3 +57,12 @@ let p = document.querySelectorAll("p");
 p.forEach(function(elem2){
     elem2.style.fontSize = "18px";
 });
+
+
+// print input text using event listener
+let inp = document.querySelector("input");
+inp.addEventListener("input", function(dets){
+    if(dets.data !== null){
+        console.log(dets.data);
+    };
+});
