@@ -45,8 +45,15 @@ img.classList.add("placeholder");
 document.querySelector("div").prepend(img);
 
 
-// Add a highlight class to every item in a list
+// Add a highlight class to every even item in a list
 let item = document.querySelectorAll("ul li:nth-child(2n)");
 item.forEach(function(elem){
     elem.classList.add("highlight");
+});
+
+
+// Set the font size of all <p> element to 18px using .style
+let p = document.querySelectorAll("p");
+p.forEach(function(elem2){
+    elem2.style.fontSize = "18px";
 });
