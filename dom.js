@@ -37,3 +37,11 @@ for(let i = 0; i < lis.length; i++){
 // Remove disable attribute from Update button
 let button = document.querySelector("button");
 button.removeAttribute("disabled");
+
+// Create a new image element with a placeholder source and add it at the top of a div
+let img = document.createElement("img");
+img.setAttribute("src", "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=620&auto=format&fit=crop&q=60&ixlib=rb-4.1.");
+img.classList.add("placeholder");
+document.querySelector("div").prepend(img);
+
+
