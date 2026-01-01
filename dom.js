@@ -66,3 +66,12 @@ inp.addEventListener("input", function(dets){
         console.log(dets.data);
     };
 });
+
+// Select Option Change
+let sel = document.querySelector("select");
+let device = document.querySelector("#device");
+
+
+sel.addEventListener("change", function(evt){
+ device.textContent = "Device Selected";
+});
