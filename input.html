@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica";
+            box-sizing: border-box;      
+        }
+
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: #222;
+            color: #999;
+        }
+
+        #main input{
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        #upload-btn{
+            padding: 16px 24px;
+            background-color: rgb(18, 146, 105);
+            color: #222;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+
+        #upload-btn:hover{
+            background-color: rgb(9, 118, 84);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <input type="file">
+        <div id="upload-btn">
+            Upload file
+        </div>
+    </div>
+    <script src="./input.js"></script>
+</body>
+</html>
