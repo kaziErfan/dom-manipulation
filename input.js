@@ -6,5 +6,5 @@ btn.addEventListener("click", function(){
 });
 
 fileBasic.addEventListener("change", function(dets){
-    console.log(dets.target.files[0].name);
+   btn.textContent = dets.target.files[0].name;
 });
