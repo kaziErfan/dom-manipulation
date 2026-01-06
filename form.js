@@ -1,5 +1,6 @@
 let form = document.querySelector("form");
 let inputs = document.querySelectorAll("input");
+let main = document.querySelector("#main");
 
 form.addEventListener("submit", function(dets){
     dets.preventDefault();
@@ -21,5 +22,12 @@ form.addEventListener("submit", function(dets){
 
     let p = document.createElement("p");
     p.textContent = "This is a practice project";
+
+    profile.append(img);
+    card.appendChild(profile);
+    card.appendChild(h3);
+    card.appendChild(h5);
+    card.appendChild(p);
+    main.appendChild(card);
  
 });
