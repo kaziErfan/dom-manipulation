@@ -20,23 +20,37 @@
         input, textarea{
             padding: 10px 20px;
         }
+        #hide{
+            display: none;
+        }
+        small{
+            color: red;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div>
         <form action="">
-            <input type="text" placeholder="Name">
-            <br><br>
-            <input type="email" name="" id="" placeholder="Email">
+            <input type="text" id="name" placeholder="Name">
+            <br>
+            <div id="hide">
+                <small>your name should be more than 2 characters</small>
+                <br>
+            </div>
+            <br>
+            <input type="email" name="" placeholder="Email">
             <br><br>
             <input type="password" placeholder="Password">
             <br><br>
-            <select name="" id="">
+            <select name="">
                 <option value="Male">Male</option>
                 <option value="female">Female</option>
             </select>
             <br><br>
-            <textarea name="" id="" placeholder="Tell about yourself"></textarea>
+            <textarea name="" placeholder="Tell about yourself"></textarea>
+            <br><br>
+            <input type="submit">
         </form>
     </div>
     <script src="formValidation.js"></script>
