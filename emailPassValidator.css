@@ -96,7 +96,7 @@ body{
 }
 
 .field__meta{
-  display: grid;
+  display: initial;
   gap: 4px;
 }
 
@@ -109,6 +109,7 @@ body{
   color: var(--danger);
   font-size: 12px;
   min-height: 16px; /* keeps layout stable when empty */
+  display: none;
 }
 
 /* Buttons */

@@ -9,4 +9,13 @@ form.addEventListener("submit", function(evt){
 
     let emailAns = emailRegex.test(email.value);
     let passwordAns = emailRegex.test(email.value);
+
+    if(!emailAns){
+        document.querySelector("#emailError").textContent = "Email is incorrect";
+        document.querySelector("#emailError").style.display = "initial";
+    }
+    if(!passwordAns){
+        document.querySelector("#passwordError").textContent = "Password is incorrect";
+        document.querySelector("#passwordError").style.display = "initial";
+    }
 });
