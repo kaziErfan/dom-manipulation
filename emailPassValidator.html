@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email & Password Validator</title>
+  <link rel="stylesheet" href="./emailPassValidator.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <header class="card__header">
+        <h1>Email & Password Validator</h1>
+        <p>Type your email and password. JS will validate and show feedback.</p>
+      </header>
+
+      <form class="form" id="validatorForm" novalidate autocomplete="off">
+        <!-- Email -->
+        <div class="field">
+          <label for="email" class="field__label">Email</label>
+          <div class="field__control">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              class="input"
+              aria-describedby="emailHelp emailError"
+            />
+          </div>
+
+          <div class="field__meta">
+            <small id="emailHelp" class="help">Example: name@domain.com</small>
+            <small id="emailError" class="error" aria-live="polite"></small>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <label for="password" class="field__label">Password</label>
+
+          <div class="field__control field__control--row">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+              class="input"
+              aria-describedby="passwordHelp passwordError"
+            />
+
+            <!-- Your JS can toggle password visibility -->
+            <button type="button" class="btn btn--ghost" id="togglePassword">
+              Show
+            </button>
+          </div>
+
+          <div class="field__meta">
+            <small id="passwordHelp" class="help">Use at least 8 characters.</small>
+            <small id="passwordError" class="error" aria-live="polite"></small>
+          </div>
+
+          <!-- Strength meter -->
+          <div class="meter" aria-hidden="true">
+            <div class="meter__bar" id="strengthBar"></div>
+          </div>
+          <div class="meter__labels">
+            <span class="meter__text" id="strengthText">Strength: —</span>
+          </div>
+
+          <!-- Requirements list (JS can toggle .is-valid / .is-invalid) -->
+          <ul class="rules" id="passwordRules">
+            <li class="rule is-invalid" data-rule="min">Minimum 8 characters</li>
+            <li class="rule is-invalid" data-rule="upper">At least 1 uppercase letter</li>
+            <li class="rule is-invalid" data-rule="lower">At least 1 lowercase letter</li>
+            <li class="rule is-invalid" data-rule="number">At least 1 number</li>
+            <li class="rule is-invalid" data-rule="special">At least 1 special character</li>
+          </ul>
+        </div>
+
+        <!-- Submit -->
+        <div class="actions">
+          <button type="submit" class="btn btn--primary" id="submitBtn">
+            Validate
+          </button>
+          <p class="status" id="formStatus" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <!-- Result Message -->
+       <div id="resultMessage"></div>
+    </section>
+  </main>
+</body>
+</html>

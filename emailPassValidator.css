@@ -1,0 +1,242 @@
+:root{
+  --bg: #0b1220;
+  --card: rgba(255,255,255,.06);
+  --card-border: rgba(255,255,255,.12);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+  --muted-2: rgba(255,255,255,.55);
+
+  --input: rgba(255,255,255,.08);
+  --input-border: rgba(255,255,255,.16);
+  --focus: rgba(99, 179, 237, .55);
+
+  --danger: #ff5a6a;
+  --ok: #4ade80;
+
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+  --radius: 18px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
+  color: var(--text);
+  background: radial-gradient(1100px 700px at 15% 15%, #14214a 0%, transparent 55%),
+              radial-gradient(900px 600px at 85% 20%, #1a3a2e 0%, transparent 55%),
+              var(--bg);
+}
+
+.page{
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.card{
+  width: min(540px, 100%);
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  padding: 22px;
+}
+
+.card__header h1{
+  margin: 0 0 8px;
+  font-size: 22px;
+  letter-spacing: .2px;
+}
+.card__header p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.form{ display: grid; gap: 18px; }
+
+.field{ display: grid; gap: 8px; }
+
+.field__label{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.field__control{
+  display: grid;
+  gap: 10px;
+}
+
+.field__control--row{
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.input{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--input);
+  color: var(--text);
+  outline: none;
+  font-size: 14px;
+}
+
+.input::placeholder{ color: rgba(255,255,255,.35); }
+
+.input:focus{
+  border-color: var(--focus);
+  box-shadow: 0 0 0 4px rgba(99, 179, 237, .18);
+}
+
+.field__meta{
+  display: grid;
+  gap: 4px;
+}
+
+.help{
+  color: var(--muted-2);
+  font-size: 12px;
+}
+
+.error{
+  color: var(--danger);
+  font-size: 12px;
+  min-height: 16px; /* keeps layout stable when empty */
+}
+
+/* Buttons */
+.btn{
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text);
+  background: rgba(255,255,255,.10);
+}
+
+.btn:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 179, 237, .18);
+}
+
+.btn--ghost{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.14);
+}
+
+.btn--primary{
+  background: linear-gradient(135deg, rgba(99,179,237,.9), rgba(74,222,128,.85));
+  border-color: rgba(255,255,255,.18);
+  color: #06101c;
+  font-weight: 600;
+}
+
+/* Strength meter */
+.meter{
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  overflow: hidden;
+}
+
+.meter__bar{
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: rgba(255,255,255,.55); /* JS can swap classes/colors if you want */
+  transition: width .25s ease;
+}
+
+.meter__labels{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meter__text{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Rules list */
+.rules{
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.rule{
+  position: relative;
+  padding-left: 26px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.rule::before{
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  border: 2px solid rgba(255,255,255,.30);
+}
+
+/* JS can toggle these classes */
+.rule.is-valid{
+  color: rgba(255,255,255,.90);
+}
+.rule.is-valid::before{
+  border-color: var(--ok);
+  background: rgba(74, 222, 128, .25);
+}
+
+.rule.is-invalid{
+  color: rgba(255,255,255,.62);
+}
+.rule.is-invalid::before{
+  border-color: rgba(255,255,255,.25);
+  background: transparent;
+}
+
+/* Actions */
+.actions{
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.status{
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 18px;
+}
+
+#resultMessage{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+/* Optional: when you add JS, you can use these states */
+.input.is-invalid{
+  border-color: rgba(255, 90, 106, .65);
+  box-shadow: 0 0 0 4px rgba(255, 90, 106, .14);
+}
+.input.is-valid{
+  border-color: rgba(74, 222, 128, .55);
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, .12);
+}
