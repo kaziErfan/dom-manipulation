@@ -24,14 +24,8 @@
               name="email"
               type="email"
               placeholder="you@example.com"
-              autocomplete="email"
               class="input"
-              aria-describedby="emailHelp emailError"
             />
-          </div>
-
-          <div class="field__meta">
-            <small id="emailHelp" class="help">Example: name@domain.com</small>
             <small id="emailError" class="error" aria-live="polite"></small>
           </div>
         </div>
@@ -46,20 +40,14 @@
               name="password"
               type="password"
               placeholder="Create a strong password"
-              autocomplete="new-password"
               class="input"
-              aria-describedby="passwordHelp passwordError"
             />
+            <small id="passwordError" class="error" aria-live="polite"></small>
 
             <!-- Your JS can toggle password visibility -->
-            <button type="button" class="btn btn--ghost" id="togglePassword">
+            <!-- <button type="button" class="btn btn--ghost" id="togglePassword">
               Show
-            </button>
-          </div>
-
-          <div class="field__meta">
-            <small id="passwordHelp" class="help">Use at least 8 characters.</small>
-            <small id="passwordError" class="error" aria-live="polite"></small>
+            </button> -->
           </div>
 
           <!-- Strength meter -->
@@ -93,6 +81,9 @@
        <div id="resultMessage"></div>
     </section>
   </main>
+
+
+
 
   <script src="./emailPassValidator.js"></script>
 </body>
